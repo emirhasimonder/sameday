@@ -1,38 +1,39 @@
 import { Header } from "@/components/Header";
 import { Logo } from "@/components/Logo";
 import { ContactForm } from "@/components/ContactForm";
+import { HeroVideo } from "@/components/HeroVideo";
 import {
-  Arrow, Bell, Bolt, Boxes, Chart, Check, Clock, Code, Mail, Phone, Pin, Plus, Shield, Truck,
-  Wallet, Warehouse, WhatsApp,
+  Arrow, Bell, Bolt, Boxes, Building, Chart, Check, Clock, Code, Mail, Phone, Pin, Plus, Shield, Truck,
+  WhatsApp,
 } from "@/components/icons";
 import { districts, nav, site, whatsappLink } from "@/lib/site";
 
 const services = [
   { icon: Bolt, title: "Aynı Gün Teslimat", text: `Saat ${site.cutoff}'e kadar teslim aldığımız gönderiler aynı gün akşamına kadar alıcısına ulaşır.`, featured: true },
   { icon: Truck, title: "Adresten Günlük Alım", text: "Kuryemiz her gün belirlediğiniz saatte deponuza ya da mağazanıza gelir, gönderileri toplu alır." },
-  { icon: Wallet, title: "Kapıda Ödeme & Tahsilat", text: "Nakit veya kartla kapıda tahsilat yapıyor, tutarı hızlı ve şeffaf şekilde hesabınıza aktarıyoruz." },
+  { icon: Shield, title: "İade & Değişim Yönetimi", text: "Alıcınızdan adresten iade ve değişim paketlerini teslim alır, deponuza güvenle geri ulaştırırız." },
   { icon: Boxes, title: "Toplu Dağıtım", text: "Kampanya, katalog, evrak ya da numune: yüzlerce gönderiyi tek seferde, bölge optimizasyonuyla dağıtıyoruz." },
-  { icon: Warehouse, title: "Depolama & Paketleme", text: "Ürünleriniz depomuzda dursun; sipariş geldiğinde paketleyip aynı gün yola çıkaralım." },
   { icon: Code, title: "API & Panel Entegrasyonu", text: "E-ticaret altyapınıza bağlanan API ve kullanıcı paneli ile siparişleriniz otomatik kargoya aktarılır." },
 ];
 
+
 const steps = [
-  { time: "09:00", title: "Siparişleri aktarın", text: "Panelden tek tuşla, Excel ile ya da API üzerinden gönderilerinizi sisteme iletin." },
-  { time: `${site.cutoff}`, title: "Adresinizden alalım", text: `${site.cutoff}'e kadar kuryemiz kapınızda. Gönderiler barkodlanır, anında takibe açılır.` },
-  { time: "15:30", title: "Akıllı rota", text: "Paketler bölgelere ayrılır, her kurye için en kısa teslimat rotası oluşturulur." },
-  { time: "22:00", title: "Bugün teslim", text: "Alıcıya teslim edilir; siz ve müşteriniz her adımda SMS ve panel bildirimi alırsınız." },
+  { title: "Siparişleri aktarın", text: "Panelden tek tuşla, Excel ile ya da API üzerinden gönderilerinizi sisteme iletin." },
+  { title: "Adresinizden alalım", text: `${site.cutoff}'e kadar kuryemiz kapınızda. Gönderiler barkodlanır, anında takibe açılır.` },
+  { title: "Akıllı rota", text: "Paketler bölgelere ayrılır, her kurye için en kısa teslimat rotası oluşturulur." },
+  { title: "Bugün teslim", text: "Alıcıya teslim edilir; siz ve müşteriniz her adımda SMS ve panel bildirimi alırsınız." },
 ];
 
 const benefits = [
   { icon: Chart, title: "Daha yüksek mağaza puanı", text: "Aynı gün teslimat seçeneği pazaryerlerinde satıcı puanınızı ve dönüşüm oranınızı yukarı taşır." },
-  { icon: Shield, title: "Daha az iptal ve iade", text: "Sipariş soğumadan teslim edilir; kapıda ödemede iptal ve iade oranı belirgin şekilde düşer." },
-  { icon: Bell, title: "Tam görünürlük", text: "Her gönderinin anlık durumunu, tahsilatları ve cari hesabınızı tek panelden izlersiniz." },
+  { icon: Shield, title: "Daha az iptal ve iade", text: "Sipariş soğumadan aynı gün teslim edilir; müşteri memnuniyeti artar, iptal ve bekleme oranı belirgin şekilde düşer." },
+  { icon: Bell, title: "Tam görünürlük", text: "Her gönderinin anlık durumunu, teslimat raporlarını ve cari hesabınızı tek panelden izlersiniz." },
 ];
 
 const faqs = [
   { q: "Aynı gün teslimat için son saat kaçtır?", a: `Saat ${site.cutoff}'e kadar adresinizden teslim aldığımız gönderiler aynı gün içinde alıcıya ulaştırılır. Bu saatten sonra alınan gönderiler ertesi gün ilk dağıtıma çıkar.` },
-  { q: "Hangi bölgelere hizmet veriyorsunuz?", a: "İstanbul'un Avrupa ve Anadolu yakasındaki 39 ilçenin tamamına aynı gün teslimat yapıyoruz." },
-  { q: "Kapıda ödemeli gönderi yapabilir miyim?", a: "Evet. Alıcıdan nakit veya kredi kartıyla tahsilat yapıyor, tutarları panelinizden takip edebileceğiniz şekilde hesabınıza aktarıyoruz." },
+  { q: "Hangi bölgelere hizmet veriyorsunuz?", a: "İstanbul'un Avrupa ve Anadolu yakasındaki 34 ilçesine aynı gün teslimat yapıyoruz." },
+  { q: "Hafta sonu teslimat yapıyor musunuz?", a: "Evet, e-ticaret operasyonlarınızın kesintisiz sürmesi için Cumartesi günleri de aynı gün teslimat hizmeti sağlıyoruz." },
   { q: "E-ticaret sitemle entegrasyon nasıl yapılıyor?", a: "REST API'miz ile siparişlerinizi otomatik olarak aktarabilirsiniz. Yazılım altyapınız yoksa panelimizden Excel yükleyerek tek seferde yüzlerce siparişi kargoya verebilirsiniz." },
   { q: "Minimum gönderi adedi var mı?", a: "Hayır. Günde birkaç gönderisi olan butik mağazalardan yüksek hacimli e-ticaret firmalarına kadar herkese uygun çözümlerimiz var. Fiyatlandırma hacminize göre belirlenir." },
   { q: "Gönderimi nasıl takip ederim?", a: "Her gönderiye özel takip numarası oluşturulur. Hem siz panelden hem de alıcınız SMS ile gönderinin durumunu anlık olarak görebilir." },
@@ -40,8 +41,8 @@ const faqs = [
 
 function SectionTag({ children, dark = false }: { children: React.ReactNode; dark?: boolean }) {
   return (
-    <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] ${dark ? "bg-white/5 text-brand-2 ring-1 ring-white/10" : "bg-brand/10 text-brand"}`}>
-      <span className="size-1.5 rounded-full bg-current" />
+    <span className={`inline-flex items-center gap-2 rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-[0.18em] ${dark ? "bg-white/10 text-white ring-1 ring-white/15" : "bg-brand/10 text-brand"}`}>
+      <span className="size-1.5 rounded-full bg-brand" />
       {children}
     </span>
   );
@@ -56,14 +57,13 @@ function ShipmentCard() {
   ];
   return (
     <div className="relative mx-auto w-full max-w-md">
-      <div className="absolute -inset-10 -z-10 rounded-full bg-brand/30 blur-3xl" />
-      <div className="animate-float rounded-3xl border border-white/10 bg-ink-2/90 p-6 shadow-2xl shadow-black/50 backdrop-blur">
+      <div className="relative animate-float rounded-3xl border border-white/20 bg-ink-2/25 p-6 shadow-2xl shadow-black/40 backdrop-blur-md">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-xs font-medium text-white/40">Takip No</p>
+            <p className="text-xs font-medium text-white/50">Takip No</p>
             <p className="font-mono text-sm font-semibold text-white">SDL-34-882 190</p>
           </div>
-          <span className="flex items-center gap-2 rounded-full bg-lime/10 px-3 py-1 text-xs font-bold text-lime">
+          <span className="flex items-center gap-2 rounded-full bg-lime/15 px-3 py-1 text-xs font-bold text-lime ring-1 ring-lime/20">
             <span className="relative flex size-2">
               <span className="absolute inline-flex size-full animate-ping rounded-full bg-lime opacity-75" />
               <span className="relative inline-flex size-2 rounded-full bg-lime" />
@@ -72,9 +72,9 @@ function ShipmentCard() {
           </span>
         </div>
 
-        <div className="mt-5 grid grid-cols-[1fr_auto_1fr] items-center gap-3 rounded-2xl bg-white/[0.03] p-4 ring-1 ring-white/5">
+        <div className="mt-5 grid grid-cols-[1fr_auto_1fr] items-center gap-3 rounded-2xl bg-white/[0.05] p-4 ring-1 ring-white/10 backdrop-blur-sm">
           <div>
-            <p className="text-[11px] text-white/40">Çıkış</p>
+            <p className="text-[11px] text-white/50">Çıkış</p>
             <p className="font-semibold text-white">Levent</p>
           </div>
           <div className="flex items-center gap-1 text-brand">
@@ -83,32 +83,38 @@ function ShipmentCard() {
             <span className="h-px w-6 bg-gradient-to-r from-brand to-transparent" />
           </div>
           <div className="text-right">
-            <p className="text-[11px] text-white/40">Varış</p>
+            <p className="text-[11px] text-white/50">Varış</p>
             <p className="font-semibold text-white">Kadıköy</p>
           </div>
         </div>
 
-        <ol className="mt-5 space-y-0">
+        <ol className="mt-5 space-y-0 pb-6">
           {timeline.map((t, i) => (
             <li key={t.label} className="relative flex gap-4 pb-4 last:pb-0">
               {i < timeline.length - 1 && (
-                <span className={`absolute left-[11px] top-6 h-[calc(100%-12px)] w-px ${t.done ? "bg-brand" : "bg-white/10"}`} />
+                <span className={`absolute left-[11px] top-6 h-[calc(100%-12px)] w-px ${t.done ? "bg-brand" : "bg-white/15"}`} />
               )}
-              <span className={`grid size-6 shrink-0 place-items-center rounded-full ${t.done ? "bg-brand text-white" : "border border-dashed border-white/25 text-white/30"}`}>
+              <span className={`grid size-6 shrink-0 place-items-center rounded-full ${t.done ? "bg-brand text-white shadow-lg shadow-brand/40" : "border border-dashed border-white/25 text-white/40"}`}>
                 {t.done ? <Check className="size-3.5" strokeWidth={3} /> : <Clock className="size-3.5" />}
               </span>
               <div className="flex flex-1 items-center justify-between">
-                <span className={`text-sm font-medium ${t.done ? "text-white" : "text-white/40"}`}>{t.label}</span>
-                <span className="font-mono text-xs text-white/40">{t.done ? t.time : `~${t.time}`}</span>
+                <span className={`text-sm font-medium ${t.done ? "text-white" : "text-white/50"}`}>{t.label}</span>
+                <span className="font-mono text-xs text-white/50">{t.done ? t.time : `~${t.time}`}</span>
               </div>
             </li>
           ))}
         </ol>
-      </div>
 
-      <div className="absolute -bottom-6 -left-4 hidden rounded-2xl border border-white/10 bg-white p-4 shadow-xl sm:block">
-        <p className="text-[11px] font-medium text-ink/50">Kapıda tahsilat</p>
-        <p className="text-lg font-extrabold text-ink">₺1.249,90</p>
+        {/* Floating Delivery Speed Badge */}
+        <div className="absolute -bottom-5 -right-4 hidden rounded-2xl border border-white/20 bg-white/85 px-4 py-3.5 shadow-2xl shadow-black/30 backdrop-blur-md sm:flex sm:items-center sm:gap-3 sm:-right-6">
+          <div className="grid size-10 shrink-0 place-items-center rounded-xl bg-brand/10 text-brand">
+            <Bolt className="size-5" />
+          </div>
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-wider text-ink/60">Teslimat Hızı</p>
+            <p className="text-sm font-extrabold text-ink sm:text-base">Aynı Gün Teslim</p>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -122,10 +128,12 @@ export default function Home() {
       <main className="flex-1">
         {/* HERO */}
         <section className="relative overflow-hidden bg-ink pb-24 pt-32 text-white sm:pt-40 lg:pb-32">
-          <div className="bg-grid absolute inset-0" />
+          <HeroVideo />
+
           <div className="absolute -top-40 left-1/2 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-brand/20 blur-[120px]" />
 
-          <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-5 lg:grid-cols-[1.15fr_1fr]">
+          <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-16 px-5 lg:grid-cols-[1.15fr_1fr]">
+
             <div>
               <SectionTag dark>İstanbul içi · Aynı gün teslimat</SectionTag>
               <h1 className="mt-6 text-5xl font-extrabold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
@@ -134,9 +142,10 @@ export default function Home() {
                 <span className="text-gradient">bugün kapıda.</span>
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/65">
-                E-ticaretinizi hızlandıran yeni nesil kargo. Saat {site.cutoff}&apos;e kadar aldığımız gönderileri
-                İstanbul&apos;un 39 ilçesinde aynı gün teslim ediyoruz. Entegre panel, kapıda ödeme ve anlık takip dahil.
+                E-ticaretinizi hızlandıran yeni nesil kargo. Teslim aldığımız gönderileri
+                İstanbul&apos;un 34 ilçesinde aynı gün teslim ediyoruz. Entegre panel ve anlık takip dahil, her şey kontrol edilebilir ve izlenebilir.
               </p>
+
 
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a href="#iletisim" className="group inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-4 font-bold transition hover:bg-brand-2">
@@ -151,10 +160,10 @@ export default function Home() {
 
               <dl className="mt-14 grid max-w-xl grid-cols-2 gap-6 border-t border-white/10 pt-8 sm:grid-cols-4">
                 {[
-                  ["39", "ilçede hizmet"],
+                  ["34", "ilçede hizmet"],
                   [site.cutoff, "son alım saati"],
                   ["1.000+", "sipariş tek tıkla"],
-                  ["20 yıl", "sektör tecrübesi"],
+                  ["8 yıl", "sektör tecrübesi"],
                 ].map(([v, l]) => (
                   <div key={l}>
                     <dt className="sr-only">{l}</dt>
@@ -173,7 +182,7 @@ export default function Home() {
         <div className="overflow-hidden border-y border-ink/10 bg-brand py-4 text-white">
           <div className="flex w-max animate-marquee gap-10 whitespace-nowrap text-sm font-bold uppercase tracking-[0.2em]">
             {Array.from({ length: 2 }).flatMap((_, k) =>
-              ["Aynı gün teslimat", "Kapıda ödeme", "Adresten alım", "API entegrasyonu", "Toplu dağıtım", "Anlık takip", "Depolama & paketleme"].map((t) => (
+              ["Aynı gün teslimat", "34 ilçede dağıtım", "Adresten alım", "API entegrasyonu", "Toplu dağıtım", "Anlık takip"].map((t) => (
                 <span key={`${k}-${t}`} className="flex items-center gap-10">
                   {t} <Bolt className="size-4" />
                 </span>
@@ -181,6 +190,7 @@ export default function Home() {
             )}
           </div>
         </div>
+
 
         {/* SERVICES */}
         <section id="hizmetler" className="mx-auto max-w-7xl px-5 py-24 lg:py-32">
@@ -200,9 +210,8 @@ export default function Home() {
             {services.map(({ icon: Icon, title, text, featured }) => (
               <article
                 key={title}
-                className={`group relative overflow-hidden rounded-3xl p-8 transition duration-300 hover:-translate-y-1 ${
-                  featured ? "bg-ink text-white" : "bg-white ring-1 ring-ink/5 hover:shadow-xl hover:shadow-ink/5"
-                }`}
+                className={`group relative overflow-hidden rounded-3xl p-8 transition duration-300 hover:-translate-y-1 ${featured ? "bg-ink text-white" : "bg-white ring-1 ring-ink/5 hover:shadow-xl hover:shadow-ink/5"
+                  }`}
               >
                 {featured && <div className="absolute -right-16 -top-16 size-48 rounded-full bg-brand/40 blur-3xl" />}
                 <span className={`relative grid size-12 place-items-center rounded-2xl ${featured ? "bg-brand text-white" : "bg-brand/10 text-brand"}`}>
@@ -227,14 +236,16 @@ export default function Home() {
             </div>
 
             <div className="relative mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              <div className="absolute left-0 right-0 top-7 hidden h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent lg:block" />
               {steps.map((s, i) => (
                 <div key={s.title} className="relative">
-                  <div className="flex items-center gap-3">
-                    <span className="relative grid size-14 place-items-center rounded-2xl bg-ink font-mono text-sm font-bold text-white">
+                  {/* Straight connecting line to the next step */}
+                  {i < steps.length - 1 && (
+                    <div className="absolute -right-6 left-14 top-7 hidden h-px bg-brand/35 lg:block" />
+                  )}
+                  <div className="flex items-center">
+                    <span className="relative z-10 grid size-14 place-items-center rounded-2xl bg-ink font-mono text-sm font-bold text-white shadow-md shadow-ink/10">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="rounded-full bg-paper px-3 py-1 font-mono text-xs font-semibold text-ink/60 ring-1 ring-ink/10">{s.time}</span>
                   </div>
                   <h3 className="mt-6 text-xl font-bold">{s.title}</h3>
                   <p className="mt-2 leading-relaxed text-ink/60">{s.text}</p>
@@ -297,7 +308,7 @@ export default function Home() {
                   {"  "}<span className="text-white">body</span>: <span className="text-lime">JSON</span>.<span className="text-lime">stringify</span>({"{"}{"\n"}
                   {"    "}<span className="text-white">receiver</span>: <span className="text-amber-200">&quot;Ayşe Yılmaz&quot;</span>,{"\n"}
                   {"    "}<span className="text-white">district</span>: <span className="text-amber-200">&quot;Kadıköy&quot;</span>,{"\n"}
-                  {"    "}<span className="text-white">cod</span>: <span className="text-sky-300">1249.90</span>,{"\n"}
+                  {"    "}<span className="text-white">packages</span>: <span className="text-sky-300">2</span>,{"\n"}
                   {"    "}<span className="text-white">sameDay</span>: <span className="text-sky-300">true</span>,{"\n"}
                   {"  "}{"}"}),{"\n"}
                   {"}"});{"\n\n"}
@@ -339,10 +350,10 @@ export default function Home() {
               <div className="max-w-2xl">
                 <SectionTag>Hizmet bölgeleri</SectionTag>
                 <h2 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
-                  İstanbul&apos;un <span className="text-brand">39 ilçesinin</span> tamamı.
+                  İstanbul&apos;un <span className="text-brand">34 ilçesinde</span> aktif hizmet.
                 </h2>
               </div>
-              <p className="max-w-md text-lg text-ink/60">Avrupa ve Anadolu yakasında, Adalar&apos;dan Silivri&apos;ye kadar her adrese aynı gün teslimat.</p>
+              <p className="max-w-md text-lg text-ink/60">Avrupa ve Anadolu yakasında 34 ilçede her adrese aynı gün güvenle teslimat.</p>
             </div>
             <ul className="mt-12 flex flex-wrap gap-2.5">
               {districts.map((d) => (
@@ -390,16 +401,20 @@ export default function Home() {
                 </p>
                 <ul className="mt-10 space-y-5">
                   {site.phone && <li>
-                    <a href={site.phoneHref} className="flex items-center gap-4 text-white/80 hover:text-white">
+                    <a href={site.phoneHref} className="flex items-center gap-4 text-white/80 transition hover:text-white">
                       <span className="grid size-11 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10"><Phone className="size-5" /></span>
                       <span className="font-semibold">{site.phone}</span>
                     </a>
                   </li>}
                   <li>
-                    <a href={`mailto:${site.email}`} className="flex items-center gap-4 text-white/80 hover:text-white">
+                    <a href={`mailto:${site.email}`} className="flex items-center gap-4 text-white/80 transition hover:text-white">
                       <span className="grid size-11 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10"><Mail className="size-5" /></span>
                       <span className="font-semibold">{site.email}</span>
                     </a>
+                  </li>
+                  <li className="flex items-center gap-4 text-white/80">
+                    <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10"><Building className="size-5 text-white/70" /></span>
+                    <span className="font-semibold">{site.companyTitle}</span>
                   </li>
                   {site.address && <li className="flex items-center gap-4 text-white/80">
                     <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10"><Pin className="size-5" /></span>
@@ -419,9 +434,12 @@ export default function Home() {
       <footer className="border-t border-ink/10 bg-paper">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-[1.5fr_1fr_1fr]">
           <div className="max-w-sm">
-            <Logo />
-            <p className="mt-4 text-ink/60">
-              İstanbul geneli 39 ilçeye aynı gün kargo teslimatı. E-ticaretin hızına yetişen yeni nesil lojistik.
+            <Logo size="lg" />
+            <p className="mt-4 font-bold text-ink">
+              {site.companyTitle}
+            </p>
+            <p className="mt-2 text-ink/60">
+              İstanbul geneli 34 ilçeye aynı gün kargo teslimatı. E-ticaretin hızına yetişen yeni nesil lojistik.
             </p>
           </div>
           <div>
@@ -441,28 +459,52 @@ export default function Home() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-ink/10">
-          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 py-6 text-sm text-ink/50 sm:flex-row">
-            <p>© 2026 {site.name}. Tüm hakları saklıdır.</p>
-            <div className="flex gap-5">
-              <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-brand">Instagram</a>
-              <a href={site.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-brand">LinkedIn</a>
-              <a href={site.social.x} target="_blank" rel="noopener noreferrer" className="hover:text-brand">X</a>
-            </div>
+        <div className="border-t border-ink/10 bg-ink text-white/55">
+          <div className="mx-auto flex max-w-7xl items-center justify-center px-5 py-5 text-center text-sm">
+            <p>
+              Web Sitesi{" "}
+              <a
+                href="https://www.levareon.com.tr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-[#a3f100] transition hover:brightness-125 hover:underline"
+              >
+                LevaReon
+              </a>{" "}
+              tarafından geliştirilmiştir | Tüm Hakları Saklıdır
+            </p>
           </div>
         </div>
+
       </footer>
 
       {/* FLOATING WHATSAPP */}
-      {site.whatsapp && <a
-        href={whatsappLink("Merhaba, bilgi almak istiyorum.")}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="WhatsApp ile iletişime geçin"
-        className="fixed bottom-5 right-5 z-40 grid size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-xl shadow-[#25D366]/30 transition hover:scale-105"
-      >
-        <WhatsApp className="size-7" />
-      </a>}
+      {site.whatsapp && (
+        <aside
+          aria-label="WhatsApp İletişim Hattı"
+          className="fixed bottom-20 right-6 z-50 flex items-center gap-3 sm:bottom-24 sm:right-8"
+        >
+          <a
+            href={whatsappLink("Merhaba, aynı gün teslimat hakkında bilgi almak istiyorum.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex items-center gap-2.5"
+          >
+            <span className="pointer-events-none hidden items-center gap-1.5 rounded-full border border-white/10 bg-ink/90 px-3.5 py-1.5 text-xs font-semibold text-white shadow-xl backdrop-blur-md transition-all duration-200 group-hover:scale-105 sm:inline-flex">
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#25D366] opacity-75" />
+                <span className="relative inline-flex size-2 rounded-full bg-[#25D366]" />
+              </span>
+              WhatsApp Destek
+            </span>
+
+            <div className="relative grid size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-[0_8px_30px_rgba(37,211,102,0.45)] transition-all duration-300 hover:scale-110 hover:bg-[#20ba59] hover:shadow-[0_10px_35px_rgba(37,211,102,0.65)] active:scale-95 sm:size-15">
+              <span className="absolute inset-0 -z-10 animate-ping rounded-full bg-[#25D366] opacity-25" />
+              <WhatsApp className="size-8" />
+            </div>
+          </a>
+        </aside>
+      )}
     </>
   );
 }

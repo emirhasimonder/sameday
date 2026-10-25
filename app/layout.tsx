@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description:
-    "İstanbul'un 39 ilçesine aynı gün kargo teslimatı. E-ticaret firmalarına adresten alım, kapıda ödeme, toplu dağıtım ve API entegrasyonu.",
-  keywords: ["aynı gün kargo", "sameday kargo", "istanbul içi kargo", "e-ticaret kargo", "kapıda ödeme kargo", "aynı gün teslimat"],
+    "İstanbul'un 34 ilçesine aynı gün kargo teslimatı. E-ticaret firmalarına adresten alım, toplu dağıtım ve API entegrasyonu.",
+  keywords: ["aynı gün kargo", "sameday kargo", "istanbul içi kargo", "e-ticaret kargo", "hızlı kurye", "aynı gün teslimat"],
   openGraph: {
     type: "website",
     locale: "tr_TR",

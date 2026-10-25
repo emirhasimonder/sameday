@@ -12,6 +12,12 @@ export const Truck = (p: P) => (<svg {...base(p)}><path d="M3 6h11v10H3zM14 9h4l
 export const Boxes = (p: P) => (<svg {...base(p)}><path d="M3 8 12 3l9 5-9 5-9-5Z" /><path d="M3 8v8l9 5 9-5V8M12 13v8" /></svg>);
 export const Wallet = (p: P) => (<svg {...base(p)}><rect x="3" y="6" width="18" height="13" rx="2.5" /><path d="M3 10h18M16 14.5h2" /></svg>);
 export const Warehouse = (p: P) => (<svg {...base(p)}><path d="M3 21V9l9-5 9 5v12" /><path d="M7 21v-8h10v8M7 17h10" /></svg>);
+export const Building = (p: P) => (
+  <svg {...base(p)}>
+    <rect x="4" y="2" width="16" height="20" rx="2" />
+    <path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01" />
+  </svg>
+);
 export const Code = (p: P) => (<svg {...base(p)}><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14" /></svg>);
 export const Check = (p: P) => (<svg {...base(p)}><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>);
 export const Arrow = (p: P) => (<svg {...base(p)}><path d="M5 12h14M13 6l6 6-6 6" /></svg>);

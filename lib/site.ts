@@ -1,16 +1,17 @@
 // Sitenin tüm iletişim ve marka bilgileri burada. Değiştirmek için sadece bu dosyayı düzenleyin.
 export const site = {
   name: "Sameday Lojistik",
+  companyTitle: "Sameday Lojistik Ticaret Limited Şirketi",
   domain: "samedaylojistik.com",
   url: "https://samedaylojistik.com",
   tagline: "İstanbul içi aynı gün teslimat",
   // Boş bırakılan alanlar sitede gösterilmez. Doldurunca otomatik görünür.
-  phone: "", // örn. "0 5xx xxx xx xx"
-  phoneHref: "", // örn. "tel:+905xxxxxxxxx"
-  whatsapp: "", // örn. "905xxxxxxxxx" (başında + olmadan)
-  email: "info@samedaylojistik.com",
+  phone: "0537 765 25 54",
+  phoneHref: "tel:+905377652554",
+  whatsapp: "905377652554",
+  email: "samedaylojistik@gmail.com",
   address: "",
-  cutoff: "14:00",
+  cutoff: "12:00",
   social: {
     instagram: "https://www.instagram.com/",
     linkedin: "https://www.linkedin.com/",
@@ -27,13 +28,16 @@ export const nav = [
   { href: "#entegrasyon", label: "Entegrasyon" },
   { href: "#bolgeler", label: "Bölgeler" },
   { href: "#sss", label: "SSS" },
+  { href: "#iletisim", label: "İletişim" },
 ];
 
 export const districts = [
-  "Adalar", "Arnavutköy", "Ataşehir", "Avcılar", "Bağcılar", "Bahçelievler", "Bakırköy",
+  "Ataşehir", "Avcılar", "Bağcılar", "Bahçelievler", "Bakırköy",
   "Başakşehir", "Bayrampaşa", "Beşiktaş", "Beykoz", "Beylikdüzü", "Beyoğlu", "Büyükçekmece",
-  "Çatalca", "Çekmeköy", "Esenler", "Esenyurt", "Eyüpsultan", "Fatih", "Gaziosmanpaşa",
+  "Çekmeköy", "Esenler", "Esenyurt", "Eyüpsultan", "Fatih", "Gaziosmanpaşa",
   "Güngören", "Kadıköy", "Kağıthane", "Kartal", "Küçükçekmece", "Maltepe", "Pendik",
-  "Sancaktepe", "Sarıyer", "Silivri", "Sultanbeyli", "Sultangazi", "Şile", "Şişli", "Tuzla",
+  "Sancaktepe", "Sarıyer", "Sultanbeyli", "Sultangazi", "Şişli", "Tuzla",
   "Ümraniye", "Üsküdar", "Zeytinburnu",
 ];
+
+

@@ -16,7 +16,6 @@ const services = [
   { icon: Code, title: "API & Panel Entegrasyonu", text: "E-ticaret altyapınıza bağlanan API ve kullanıcı paneli ile siparişleriniz otomatik kargoya aktarılır." },
 ];
 
-
 const steps = [
   { title: "Siparişleri aktarın", text: "Panelden tek tuşla, Excel ile ya da API üzerinden gönderilerinizi sisteme iletin." },
   { title: "Adresinizden alalım", text: `${site.cutoff}'e kadar kuryemiz kapınızda. Gönderiler barkodlanır, anında takibe açılır.` },
